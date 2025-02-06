@@ -1,11 +1,15 @@
 package com.nttdata.screens;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DetailProductScreen extends PageObject {
+
+    private static final Log log = LogFactory.getLog(DetailProductScreen.class);
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id=\"com.saucelabs.mydemoapp.android:id/productTV\"]")
     private WebElement productTitle;
@@ -26,7 +30,9 @@ public class DetailProductScreen extends PageObject {
 
     public void setProductQuantity(int quantity){
         for(int i = 1; i < quantity; i++){
+            log.info("Increasing quantity: " + i);
             increaseQuantityButton.click();
+            waitABit(1000);
         }
     }
 

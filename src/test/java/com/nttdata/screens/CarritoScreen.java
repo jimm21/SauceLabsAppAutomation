@@ -1,11 +1,15 @@
 package com.nttdata.screens;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CarritoScreen extends PageObject {
+
+    private static final Log log = LogFactory.getLog(CarritoScreen.class);
 
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/productTV")
     private WebElement carritoTitle;

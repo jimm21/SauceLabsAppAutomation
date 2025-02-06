@@ -21,7 +21,7 @@ public class CarritoStepsDefs {
         carritoSteps.validateCargaProductos();
     }
     @When("agrego {int} del siguiente producto {string}")
-    public void agrego_del_siguiente_producto(Integer unidades, String producto) {
+    public void agrego_del_siguiente_producto(int unidades, String producto) {
         carritoSteps.agregarProductoAlCarrito(unidades, producto);
     }
     @Then("valido el carrito de compra actualice correctamente")
