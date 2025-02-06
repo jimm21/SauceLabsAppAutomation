@@ -18,14 +18,14 @@ public class CarritoStepsDefs {
     }
     @And("valido que carguen correctamente los productos en la galeria")
     public void valido_que_carguen_correctamente_los_productos_en_la_galeria() {
-
+        carritoSteps.validateCargaProductos();
     }
     @When("agrego {int} del siguiente producto {string}")
     public void agrego_del_siguiente_producto(Integer unidades, String producto) {
-
+        carritoSteps.agregarProductoAlCarrito(unidades, producto);
     }
     @Then("valido el carrito de compra actualice correctamente")
     public void valido_el_carrito_de_compra_actualice_correctamente() {
-
+        carritoSteps.validarCarritoActualizado();
     }
 }

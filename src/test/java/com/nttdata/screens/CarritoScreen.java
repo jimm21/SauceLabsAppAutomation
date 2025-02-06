@@ -1,4 +1,41 @@
 package com.nttdata.screens;
 
-public class CarritoScreen {
+import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.WebElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+public class CarritoScreen extends PageObject {
+
+    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/productTV")
+    private WebElement carritoTitle;
+
+    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/titleTV")
+    private WebElement productName;
+
+    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/noTV")
+    private WebElement productQuantity;
+
+    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/noItemTitleTV")
+    private WebElement noItemsTextElement;
+
+    public boolean isCarritoTitleDisplayed(){
+        waitFor(ExpectedConditions.visibilityOf(carritoTitle));
+        return carritoTitle.isDisplayed();
+    }
+
+    public boolean isNoItemsTextDisplayed(){
+        return noItemsTextElement.isDisplayed();
+    }
+
+    public String getProductNameText(){
+        return productName.getText();
+    }
+
+    public String getProductQuantityText(){
+        return productQuantity.getText();
+    }
+
+
+
 }
