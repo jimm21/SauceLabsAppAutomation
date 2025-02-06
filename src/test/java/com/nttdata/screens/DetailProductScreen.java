@@ -30,7 +30,6 @@ public class DetailProductScreen extends PageObject {
 
     public void setProductQuantity(int quantity){
         for(int i = 1; i < quantity; i++){
-            log.info("Increasing quantity: " + i);
             increaseQuantityButton.click();
             waitABit(1000);
         }

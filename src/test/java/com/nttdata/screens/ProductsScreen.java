@@ -53,9 +53,7 @@ public class ProductsScreen extends PageObject {
     }
 
     public void selectProduct(String producto){
-        log.info("Selecting product: " + producto);
         findProductByName(producto);
-        log.info("Product found: " + producto);
         if (product != null) {
             product.click();
         } else {

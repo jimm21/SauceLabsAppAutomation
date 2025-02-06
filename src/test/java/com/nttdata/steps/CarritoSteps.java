@@ -44,12 +44,6 @@ public class CarritoSteps {
 
     public void validarCarritoActualizado() {
         Assert.assertTrue("No se cargo la seccion del carrito o el producto no se agrego correctamente", carritoScreen.isCarritoTitleDisplayed());
-
-        log.info("Producto: "+this.producto);
-        log.info("Unidades: "+this.unidades);
-        log.info("Nombre del producto en el carrito: "+carritoScreen.getProductNameText());
-        log.info("Cantidad del producto en el carrito: "+carritoScreen.getProductQuantityText());
-
         Assert.assertEquals("El producto no se agrego correctamente al carrito",
                 this.producto+String.valueOf(this.unidades),
                 carritoScreen.getProductNameText()+carritoScreen.getProductQuantityText());
